@@ -1,0 +1,25 @@
+.column {
+    background-color:black;
+    color:white;
+
+}
+
+.navbar {
+    background-color: rgb(86, 2, 59);
+}
+
+.footer {
+        position: sticky;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(86, 2, 59);
+        color: black;
+        text-align: center;
+        text-shadow: black;
+}
+
+.hidden {
+    display: none;
+  }
+  
