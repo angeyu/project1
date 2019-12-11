@@ -83,29 +83,37 @@ let signFinder = function (day, month) {
 
 // -------------------------NASA Pic/Video of the day - NH -------------------------------------------
 
-// convert birthdate for Query URL.
+// -------------------convert birthdate for Query URL.------------
 var urlDate = moment(monthDay, "MM/DD").format("MM-DD");
 var queryURL = "https://api.nasa.gov/planetary/apod?api_key=dS2HzlrfOwnYcGBTKbyf8Vz1QzgxwCbH2dLQ1uJ5&date=2018-" + urlDate
 
+//---------------- API pull.--------------------
 $.ajax({
   url: queryURL,
   method: "GET"
 }).then(function(response) {
 
-var media = response.media_type
-
+//-------------- Checking to see what the media type is-------------
+    var media = response.media_type
 $(".card").removeClass("hidden");
 $(".input-field").addClass("hidden");
 
-// in case date pulls video, used alert just for testing .
+// ---------------in case date pulls video.-----------------------------------
 if (media != "image") {
-  alert("Your POTD is actually a video.  Please click the link to watch.");
+// ------------------Populating card,----------------------
+  $(".vid").text("Your 'Picture of the Day' is actually a video.   Please click the link below to watch.");
   $("#bDayImg").attr("src","");
   $("#imgLink").text("Click here to watch video"); 
   $("#imgLink").attr("href", response.url); 
 } else {  
   $("#bDayImg").attr("src", response.url); 
+// -------------function opens link in new tab-------------------------------
+  $("a.pop").click(function() {
+    window.open(this.href);
+    return false;
+  });
   $("#imgLink").attr("href", response.url); 
+
 }
   $(".card-title2").text(response.title); 
   $(".card-content2").text(response.explanation);
@@ -136,13 +144,13 @@ if (media != "image") {
     // card year
         let cardYear = Wikipediaresponse.births[2].year;
         console.log(cardYear);
-        $("#year").text(cardYear);
+        $("#year1").text(cardYear);
     // card thumbnail
         let cardThumbnail = Wikipediaresponse.births[2].pages[0].originalimage.source;
         console.log(cardThumbnail);
         $("#thumbnail1").attr("src",cardThumbnail);
     }); // end ajax call 
-}
+
 
 for (let i=0; i<signs.length; i++) {
         if (signs[i].startDate<= monthDay && monthDay <= signs[i].endDate) {
@@ -152,6 +160,9 @@ for (let i=0; i<signs.length; i++) {
             break;
         }
     }
+
+
+
 
     console.log(starSign);
     if(starSign){
@@ -204,4 +215,4 @@ var queryURLWikipedia = "https://en.wikipedia.org/api/rest_v1/feed/onthisday/bir
 
 
 
-
+}
