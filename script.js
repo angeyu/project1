@@ -96,7 +96,7 @@ $.ajax({
 //-------------- Checking to see what the media type is-------------
     var media = response.media_type
 $(".card").removeClass("hidden");
-$(".input-field").addClass("hidden");
+$(".select").addClass("hidden");
 
 // ---------------in case date pulls video.-----------------------------------
 if (media != "image") {
@@ -118,6 +118,8 @@ if (media != "image") {
   $(".card-title2").text(response.title); 
   $(".card-content2").text(response.explanation);
   $(".card-content2").text(response.explanation);
+
+  
 });
 // --------------------------------------------------------------
 
@@ -137,16 +139,16 @@ if (media != "image") {
     }).then(function(Wikipediaresponse) {
         console.log(Wikipediaresponse); 
     // card text
-        let cardText = Wikipediaresponse.births[2].text;
+        let cardText = Wikipediaresponse.births[25].text;
         console.log(cardText);
         $("#text").text(cardText);
         
     // card year
-        let cardYear = Wikipediaresponse.births[2].year;
+        let cardYear = Wikipediaresponse.births[25].year;
         console.log(cardYear);
         $("#year1").text(cardYear);
     // card thumbnail
-        let cardThumbnail = Wikipediaresponse.births[2].pages[0].originalimage.source;
+        let cardThumbnail = Wikipediaresponse.births[25].pages[0].originalimage.source;
         console.log(cardThumbnail);
         $("#thumbnail1").attr("src",cardThumbnail);
     }); // end ajax call 
@@ -183,36 +185,4 @@ for (let i=0; i<signs.length; i++) {
        })
        
     }   
-       //make a .then call to get the description from the returned ajax call and populate a corresponding html div class///id
-    
-
-    // append variables to Wikipedia queryURL search 
-var queryURLWikipedia = "https://en.wikipedia.org/api/rest_v1/feed/onthisday/births/" + monthDay;
-
-    // check queryURL
-    console.log(queryURLWikipedia);
-
-    // return response object data to card
-    $.ajax({
-        url: queryURLWikipedia,
-        method: "GET"
-    }).then(function(Wikipediaresponse) {
-        console.log(Wikipediaresponse); 
-    // card text
-        let cardText = Wikipediaresponse.births[2].text;
-        console.log(cardText);
-        $("#text").text(cardText);
-        
-    // card year
-        let cardYear = Wikipediaresponse.births[2].year;
-        console.log(cardYear);
-        $("#year").text(cardYear);
-    // card thumbnail
-        let cardThumbnail = Wikipediaresponse.births[2].pages[0].originalimage.source;
-        console.log(cardThumbnail);
-        $("#thumbnail").attr("src",cardThumbnail);
-    }); // end ajax call 
-
-
-
 }
