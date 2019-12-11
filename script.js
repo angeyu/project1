@@ -95,6 +95,8 @@ $.ajax({
 
 //-------------- Checking to see what the media type is-------------
     var media = response.media_type
+
+//--------------------Show cards and Hide dropdowns-------------------
 $(".card").removeClass("hidden");
 $(".select").addClass("hidden");
 
@@ -113,13 +115,10 @@ if (media != "image") {
     return false;
   });
   $("#imgLink").attr("href", response.url); 
-
 }
   $(".card-title2").text(response.title); 
   $(".card-content2").text(response.explanation);
-  $(".card-content2").text(response.explanation);
-
-  
+  $(".card-content2").text(response.explanation);  
 });
 // --------------------------------------------------------------
 
