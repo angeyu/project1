@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fun With Birthdays!</title>
+    <title>Birthday Fun!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -102,10 +102,10 @@
   </div>
 </footer>!-->
 
-<!-- -------------------------NASA Pic/Video of the day - NH ------------------------------------------- -->
+<!-- ------------------------- NASA Pic/Video of the day - NH ------------------------------------------- -->
 
 <div class="column tile">
-<section class="card hidden" >
+<section class="card hidden">
   <div class="column">
     <div class="card-image is-6">
       <figure class="image">
@@ -123,21 +123,30 @@
     </div>
   </div>
 </section>
-<!-- -------------------------------------------------------------------------- -->
-<!--born on this day card-->
+<!-- --------------------- Wikipedia Born On This Day - CN ----------------------------------------------------- -->
 <div class="column card hidden is-parent is-6">
-    <!--person image-->
     <div class="column">
-      <h2>Born On This Day, from Wikipedia:</h2> 
+      <h2>Who else was born on the same day?</h2> <br>
+        <!--person image-->
       <div class="card-image">
-        <figure class="image">
-        <img id="thumbnail1" src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image"> </figure>
+        <figure class="image is-6">
+          <img id="thumbnail1" src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+        </figure>
       </div>
       <div class="card-content">
+      <!--no wikipedia photo error message-->
+      <div class="content" id="photoError"></div><br>  
       <!--famous person birth year-->
-      <p class="card-title " id="year1"></p>
+      <p class="card-title" style="font-weight: bold; font-size: large;" id="year1"></p>
       <!--wikipedia person name and description-->
-      <div class="content" id="text"> </div>
+      <div class="content" id="text"></div>
+      <!--wikipedia more info link-->
+      <div class="card-action">
+        <a class="pop" id="moreInfo" href="" >Learn more about this person</a>
+      </div>
+      
+
+
       </div>
     </div>
   </div>
