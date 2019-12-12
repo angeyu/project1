@@ -12,8 +12,7 @@ Our app was built on the Bulma CSS framework (https://bulma.io/) using three thi
 # User Story
 There are few things that every single person has in common, but we are united in the fact that we all have a birthday; we built this app to give new perspective to that special occasion. Users--anyone with a birthday--will be granted multiple different perspectives on their birthday. The NASA image of the day shows what space looked liked on the user's birthday, a gorgeous reminder of the magnitude and beauty of the universe as we celebrate our place within it. Wikipedia's Born On This Day feed lets the user know of another person profiled on Wikipedia born on the same day, an interesting fun fact and avenue for learning based on a little shared kinship. Finally, horoscopes (powered by Aztro API) provide the user a bit of star-powered guidance to help them move through the day. Our app was designed with mobile users in mind, using the Bulma CSS framework for its mobile-first responsive features. 
 
-# License
-## Wikipedia License
+# Wikipedia License
 Use of the Wikipedia API is licensed under the Creative Commons-BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/) and GFDL licenses, and we irrevocably agree to release modifications or additions made through this API under these licenses. See https://www.mediawiki.org/wiki/REST_API for background and details. By using this API, we agree to Wikimedia's Terms of Use and Privacy Policy.  
 
 # Authors

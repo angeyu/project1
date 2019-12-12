@@ -78,7 +78,7 @@ let signFinder = function (day, month) {
     let monthDay = `${month}/${day}`
     let starSign;
 
-// -------------------------NASA Pic/Video of the day - NH -------------------------------------------
+// ------------------------- NASA Pic/Video of the day - NH -------------------------------------------
 
 // -------------------convert birthdate for Query URL.------------
 var urlDate = moment(monthDay, "MM/DD").format("MM-DD");
@@ -142,15 +142,21 @@ if (media != "image") {
         let cardYear = Wikipediaresponse.births[25].year;
         console.log(cardYear);
         $("#year1").text(cardYear);
-    // card thumbnail
+    // card image 
         if (Wikipediaresponse.births[25].pages[0].originalimage) {
             let cardThumbnail = Wikipediaresponse.births[25].pages[0].originalimage.source;
             console.log(cardThumbnail);
             $("#thumbnail1").attr("src" , cardThumbnail);  
-        } else {
-            console.log("No Wikipedia image!");
+        } else { // error image and message if there is no image on wikipedia. test using 08/07 (august 7)
+            console.log("No Wikipedia image!"); 
             $("#thumbnail1").attr("src", "assets/giraffe-error-meme.jpeg");
-        } 
+            $("#photoError").text("Your birthday buddy does not have an image on their Wikipedia page. Please enjoy these giraffes instead!")
+        };
+    // card more info button
+        let cardMoreInfo = Wikipediaresponse.births[25].pages[0].content_urls.desktop.page;
+        console.log(cardMoreInfo);
+        $("#moreInfo").attr("href", cardMoreInfo);
+
     }); // end ajax call 
 
 // ---------------------------------- Horoscope ----------------------------------------------
