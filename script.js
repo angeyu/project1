@@ -157,7 +157,7 @@ if (media != "image") {
         console.log(cardMoreInfo);
         $("#moreInfo").attr("href", cardMoreInfo);
 
-    }); // end ajax call 
+    }); // end ajax call
 
 // ---------------------------------- Horoscope ----------------------------------------------
 for (let i=0; i<signs.length; i++) {
@@ -185,3 +185,4 @@ for (let i=0; i<signs.length; i++) {
        })
     }   
 }
+
