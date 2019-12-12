@@ -1,3 +1,4 @@
+// -----------------------------User Birthday and Zodiac Sign -----------------------------------
 let day = $("#day")
 let month = $("#month")
 let dayValue = day.val()
@@ -57,9 +58,6 @@ const signs =[{
     endDate: "03/20"
 }];
 
-
-
-
 $(day).on("change", function(){
     dayValue=this.value;
     console.log(dayValue);
@@ -76,12 +74,11 @@ $(month).on("change", function(){
     }
 })
 
-
 let signFinder = function (day, month) {
     let monthDay = `${month}/${day}`
     let starSign;
 
-// -------------------------NASA Pic/Video of the day - NH -------------------------------------------
+// ------------------------- NASA Pic/Video of the day - NH -------------------------------------------
 
 // -------------------convert birthdate for Query URL.------------
 var urlDate = moment(monthDay, "MM/DD").format("MM-DD");
@@ -120,68 +117,72 @@ if (media != "image") {
   $(".card-content2").text(response.explanation);
   $(".card-content2").text(response.explanation);  
 });
-// --------------------------------------------------------------
 
 //make a .then call to get the description from the returned ajax call and populate a corresponding html div class///id
     
+// ------------------------ Wikipedia Born on This Day - LA --------------------------------------
 
-    // append variables to Wikipedia queryURL search 
+// append variables to Wikipedia queryURL search 
     var queryURLWikipedia = "https://en.wikipedia.org/api/rest_v1/feed/onthisday/births/" + monthDay;
 
-    // check queryURL
+// check queryURL
     console.log(queryURLWikipedia);
 
-    // return response object data to card
+// return response object data to card
     $.ajax({
         url: queryURLWikipedia,
         method: "GET"
     }).then(function(Wikipediaresponse) {
         console.log(Wikipediaresponse); 
     // card text
-        let cardText = Wikipediaresponse.births[25].text;
+        let cardText = Wikipediaresponse.births[75].text;
         console.log(cardText);
         $("#text").text(cardText);
-        
     // card year
-        let cardYear = Wikipediaresponse.births[25].year;
+        let cardYear = Wikipediaresponse.births[75].year;
         console.log(cardYear);
         $("#year1").text(cardYear);
-    // card thumbnail
-        let cardThumbnail = Wikipediaresponse.births[25].pages[0].originalimage.source;
-        console.log(cardThumbnail);
-        $("#thumbnail1").attr("src",cardThumbnail);
-    }); // end ajax call 
+    // card image 
+        if (Wikipediaresponse.births[75].pages[0].originalimage) {
+            let cardThumbnail = Wikipediaresponse.births[75].pages[0].originalimage.source;
+            console.log(cardThumbnail);
+            $("#thumbnail1").attr("src" , cardThumbnail);  
+        } else { // error image and message if there is no image on wikipedia. test using 08/07 (august 7)
+            console.log("No Wikipedia image!"); 
+            $("#thumbnail1").attr("src", "assets/giraffe-error-meme.jpeg");
+            $("#photoError").text("Your birthday buddy does not have an image on their Wikipedia page. Please enjoy these giraffes instead!")
+        };
+    // card more info button
+        let cardMoreInfo = Wikipediaresponse.births[75].pages[0].content_urls.desktop.page;
+        console.log(cardMoreInfo);
+        $("#moreInfo").attr("href", cardMoreInfo);
 
+    }); // end ajax call
 
+// ---------------------------------- Horoscope ----------------------------------------------
 for (let i=0; i<signs.length; i++) {
         if (signs[i].startDate<= monthDay && monthDay <= signs[i].endDate) {
             starSign=signs[i].sign
             console.log(`Sign ${signs[i].sign}`)
             $("#star-sign").text(starSign)
             break;
-        }
-    }
-
-
-
-
-    console.log(starSign);
-    if(starSign){
-    
-
-        $.ajax({
+        }} console.log(starSign);
+        
+        if(starSign){
+             $.ajax({
             type:'POST',
             url:`https://aztro.sameerkumar.website?sign=${starSign}&day=today`,
             success:function(data){
             console.log(data);
             }
-       }).then(function (data) {
+            
+            }).then(function (data) {
            $(".date-range").text(`${data.date_range}`);
            $(".description").text(`${data.description}`);
            $(".compatibility").text(`Compatibility: ${data.compatibility}`);
            $(".mood").text(`Mood: ${data.mood}`);
            $(".color").text(`Color: ${data.color}`);
        })
-       
     }   
 }
+
