@@ -95,7 +95,7 @@ let signFinder = function (day, month) {
             }).then(function (data) {
             $("#star-sign").text(`${starSign} (${data.date_range})`);
             $("#description").text(`${data.description}`);
-            $("#compatibility").text(`• You may experience compatibility with ${data.compatibility} signs.`);
+            $("#compatibility").text(`• You may experience compatibility with ${data.compatibility} signs`);
             $("#mood").text(`• You may be feeling ${data.mood} today`);
             $("#color").text(`• Color: ${data.color}`);
        })

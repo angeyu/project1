@@ -27,6 +27,10 @@ body {
     color:white;
 }
 
+.column-title {
+    border-bottom: solid 2px white;
+}
+
 .navbar {
     background-color: rgb(86, 2, 59);
     border-bottom: solid 2px white;
