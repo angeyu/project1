@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fun With Birthdays!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <img src="assets/Capture.png" alt="" width="112" height="28">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="true">
+          <span aria-hidden="false"></span>
+          <span aria-hidden="false"></span>
+          <span aria-hidden="false"></span>
+        </a>
+      </div>
+    </nav>
+     <nav class="level">
+        <div class="column is-6">
+        <div class="level-item has-text-centered">
+            <div class="select is-full-i">
+                <select id ="month">
+                    <option>Month</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+            </div>
+        </div>
+        </div>
+        <div class="column is-6">
+        <div class="level-item has-text-centered">
+            <div class="select">
+            <select id="day">
+                <option>Day</option>
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+                <option>04</option>
+                <option>05</option>
+                <option>06</option>
+                <option>07</option>
+                <option>08</option>
+                <option>09</option>
+                <option>10</option>
+                <option>11</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+                <option>25</option>
+                <option>26</option>
+                <option>27</option>
+                <option>28</option>
+                <option>29</option>
+                <option>30</option>
+                <option>31</option>
+            </select>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <div class="column is-12" id="star-sign">
+    </div>
+    <div class="column is-12" id="star-sign-data">
+        <div class="date-range"></div>
+        <br>
+        <div class="description"></div>
+        <br>
+        <div class="compatibility"></div>
+        <br>
+        <div class="mood"></div>
+        <br>
+        <div class="color"></div>
+    </div>
+<!--<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Footer</a>.
+    </p>
+  </div>
+</footer>!-->
+
+<!-- -------------------------NASA Pic/Video of the day - NH ------------------------------------------- -->
+
+<div class="column tile">
+<section class="card hidden" >
+  <div class="column">
+    <div class="card-image is-6">
+      <figure class="image">
+        <img id="bDayImg" src="" alt="">
+        <span style="font-weight: bold; font-size: large;" class=" vid card-title"></span> 
+      </figure>
+    </div>
+    <div class="content column">
+      <p class="card-title2 title">Photo Title</p>
+    <div class="card-content2 column">
+      Description.
+    </div>
+    <div class="card-action">
+      <a class="pop" id="imgLink" href="#">Click here to see full size image</a>
+    </div>
+  </div>
+</section>
+<!-- -------------------------------------------------------------------------- -->
+<!--born on this day card-->
+<div class="column card hidden is-parent is-6">
+    <!--person image-->
+    <div class="column">
+      <h2>Born On This Day, from Wikipedia:</h2> 
+      <div class="card-image">
+        <figure class="image">
+        <img id="thumbnail1" src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image"> </figure>
+      </div>
+      <div class="card-content">
+      <!--famous person birth year-->
+      <p class="card-title " id="year1"></p>
+      <!--wikipedia person name and description-->
+      <div class="content" id="text"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- --------------------------------------------------------------------- -->
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="script.js"></script>
+
+</html>
