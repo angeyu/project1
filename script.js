@@ -61,6 +61,7 @@ const signs =[{
 $(day).on("change", function(){
     dayValue=this.value;
     console.log(dayValue);
+    //if dayValue is not not a number (is a number) and monthValue is not not a number then 
     if (!isNaN(dayValue) && !isNaN(monthValue)) {
         let sign=signFinder(dayValue, monthValue)
         }
@@ -118,7 +119,6 @@ $.ajax({
 
 //--------------------Show cards and Hide dropdowns-------------------
 $(".card").removeClass("hidden");
-$(".select").addClass("hidden");
 
 // ---------------in case date pulls video.-----------------------------------
 if (media != "image") {
@@ -128,7 +128,8 @@ if (media != "image") {
   $("#imgLink").text("Click here to watch video"); 
   $("#imgLink").attr("href", response.url); 
 } else {  
-  $("#bDayImg").attr("src", response.url); 
+  $("#bDayImg").attr("src", response.url);
+
 // -------------function opens link in new tab-------------------------------
   $("a.pop").click(function() {
     window.open(this.href);
@@ -173,10 +174,10 @@ if (media != "image") {
         } else { // error image and message if there is no image on wikipedia. test using 08/07 (august 7)
             console.log("No Wikipedia image!"); 
             $("#thumbnail1").attr("src", "assets/giraffe-error-meme.jpeg");
-            $("#photoError").text("Your birthday buddy does not have an image on their Wikipedia page. Please enjoy these giraffes instead!")
+            //$("#photoError").text("Your birthday buddy does not have an image on their Wikipedia page. Please enjoy these giraffes instead!")
         };
     // card more info button
-        $("#h2").text(`Born on this day in history (${month}/${day})`)
+        $("#h2").text(`Born on this day in ${cardYear}`)
         let cardMoreInfo = Wikipediaresponse.births[75].pages[0].content_urls.desktop.page;
         console.log(cardMoreInfo);
         $("#moreInfo").attr("href", cardMoreInfo);
