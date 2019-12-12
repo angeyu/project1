@@ -4,6 +4,8 @@ let month = $("#month")
 let dayValue = day.val()
 let monthValue = month.val()
 
+
+//array of signs, start dates, and end dates
 const signs =[{
     sign: "Aries",
     startDate: "03/21",
