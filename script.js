@@ -176,6 +176,7 @@ if (media != "image") {
             $("#photoError").text("Your birthday buddy does not have an image on their Wikipedia page. Please enjoy these giraffes instead!")
         };
     // card more info button
+        $("#h2").text(`Born on this day in history (${month}/${day})`)
         let cardMoreInfo = Wikipediaresponse.births[75].pages[0].content_urls.desktop.page;
         console.log(cardMoreInfo);
         $("#moreInfo").attr("href", cardMoreInfo);
