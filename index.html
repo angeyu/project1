@@ -22,9 +22,11 @@
         </a>
       </div>
     </nav>
+    <div id="wrapper">
     <nav class="level">
+      <div class="column is-6">
       <div class="level-item has-text-centered">
-        <div class="select">
+        <div class="select is-danger">
           <select id ="month">
             <option>Month</option>
             <option>01</option>
@@ -41,9 +43,11 @@
             <option>12</option>
           </select>
         </div>
-     
+      </div>
+      </div>
+      <div class="column is-6"> 
       <div class="level-item has-text-centered">
-        <div class="select">
+        <div class="select is-danger">
           <select id="day">
             <option>Day</option>
             <option>01</option>
@@ -81,26 +85,16 @@
       </div>
       </div>
     </nav>
-    <div class="column is-12" id="star-sign">
-    </div>
     <div class="column is-12" id="star-sign-data">
-        <div class="date-range"></div>
+        <div class="row" id="star-sign"></div>
+        <div class="row" id="description"></div>
         <br>
-        <div class="description"></div>
+        <div class="row" id="compatibility"></div>
         <br>
-        <div class="compatibility"></div>
+        <div class="row" id="mood"></div>
         <br>
-        <div class="mood"></div>
-        <br>
-        <div class="color"></div>
+        <div class="row" id="color"></div>
     </div>
-<!--<footer class="footer">
-  <div class="content has-text-centered">
-    <p>
-      <strong>Footer</a>.
-    </p>
-  </div>
-</footer>!-->
 
 <!-- ------------------------- NASA Pic/Video of the day - NH ------------------------------------------- -->
 
@@ -114,39 +108,37 @@
       </figure>
     </div>
     <div class="content column">
-      <p class="card-title2 title">Photo Title</p>
+      <p class="card-title2 title" id="card-t2">Photo Title</p>
     <div class="card-content2 column">
       Description.
     </div>
     <div class="card-action">
-      <a class="pop" id="imgLink" href="#">Click here to see full size image</a>
+      <a class="pop" id="imgLink" href="#">View full size image</a>
     </div>
   </div>
 </section>
 <!-- --------------------- Wikipedia Born On This Day - CN ----------------------------------------------------- -->
-<div class="column card hidden is-parent is-6">
-    <div class="column">
-      <h2>Who else was born on the same day?</h2> <br>
-        <!--person image-->
-      <div class="card-image">
-        <figure class="image is-6">
-          <img id="thumbnail1" src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-        </figure>
-      </div>
-      <div class="card-content">
-      <!--no wikipedia photo error message-->
-      <div class="content" id="photoError"></div><br>  
-      <!--famous person birth year-->
-      <p class="card-title" style="font-weight: bold; font-size: large;" id="year1"></p>
-      <!--wikipedia person name and description-->
-      <div class="content" id="text"></div>
-      <!--wikipedia more info link-->
-      <div class="card-action">
-        <a class="pop" id="moreInfo" href="" >Learn more about this person</a>
-      </div>
-      
-
-
+  <div class="column card hidden is-parent is-6">
+      <div class="column" id="m-d">
+        <h2>Born on this day in history</h2> <br>
+          <!--person image-->
+        <div class="card-image">
+          <figure class="image is-6">
+            <img id="thumbnail1" src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content">
+        <!--no wikipedia photo error message-->
+        <div class="content" id="photoError"></div><br>  
+        <!--famous person birth year-->
+        <p class="card-title" style="font-weight: bold; font-size: large;" id="year1"></p>
+        <!--wikipedia person name and description-->
+        <div class="content" id="text"></div>
+        <!--wikipedia more info link-->
+        <div class="card-action">
+          <a class="pop" id="moreInfo" href="" >Learn more about this person</a>
+        </div>
+        </div>
       </div>
     </div>
   </div>
@@ -155,6 +147,9 @@
 
 <!-- --------------------------------------------------------------------- -->
 </body>
+<footer>
+  <div><i class="fas fa-smile-beam"></i> Fueled by Memes, Teams, & Dreams <i class="fas fa-smile-beam"></i></div>
+</footer>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="script.js"></script>

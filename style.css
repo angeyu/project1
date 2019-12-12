@@ -1,22 +1,51 @@
+body {
+    background-color: black;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+#wrapper {
+    flex: 1;
+}
+
+#star-sign-data {
+    border-bottom: solid 2px white;
+    border-top: solid 2px white;
+}
+
+#star-sign {
+    font-size: xx-large;
+}
+
+#date-range {
+    font-size: x-large;
+}
+
 .column {
     background-color:black;
     color:white;
-
 }
 
 .navbar {
     background-color: rgb(86, 2, 59);
+    border-bottom: solid 2px white;
 }
 
-.footer {
+#card-t2 {
+    color: white;
+}
+
+footer {
         position: sticky;
         left: 0;
         bottom: 0;
         width: 100%;
         background-color: rgb(86, 2, 59);
-        color: black;
+        color: white;
         text-align: center;
         text-shadow: black;
+        border-top: solid 2px white;
 }
 
 .hidden {
@@ -24,8 +53,12 @@
   }
 
 .card {
-
     background-color: black;
+}
+
+.select {
+    column-span: all;
+    align-content: center;
 }
 
   

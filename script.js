@@ -77,6 +77,29 @@ $(month).on("change", function(){
 let signFinder = function (day, month) {
     let monthDay = `${month}/${day}`
     let starSign;
+    for (let i=0; i<signs.length; i++) {
+        if (signs[i].startDate<= monthDay && monthDay <= signs[i].endDate) {
+            starSign=signs[i].sign
+            console.log(`Sign ${signs[i].sign}`)
+            break;
+        }} console.log(starSign);
+        
+        if(starSign){
+             $.ajax({
+            type:'POST',
+            url:`https://aztro.sameerkumar.website?sign=${starSign}&day=today`,
+            success:function(data){
+            console.log(data);
+            }
+            
+            }).then(function (data) {
+            $("#star-sign").text(`${starSign} (${data.date_range})`);
+            $("#description").text(`${data.description}`);
+            $("#compatibility").text(`• You may experience compatibility with ${data.compatibility} signs.`);
+            $("#mood").text(`• You may be feeling ${data.mood} today`);
+            $("#color").text(`• Color: ${data.color}`);
+       })
+    }   
 
 // ------------------------- NASA Pic/Video of the day - NH -------------------------------------------
 
@@ -160,29 +183,6 @@ if (media != "image") {
     }); // end ajax call
 
 // ---------------------------------- Horoscope ----------------------------------------------
-for (let i=0; i<signs.length; i++) {
-        if (signs[i].startDate<= monthDay && monthDay <= signs[i].endDate) {
-            starSign=signs[i].sign
-            console.log(`Sign ${signs[i].sign}`)
-            $("#star-sign").text(starSign)
-            break;
-        }} console.log(starSign);
-        
-        if(starSign){
-             $.ajax({
-            type:'POST',
-            url:`https://aztro.sameerkumar.website?sign=${starSign}&day=today`,
-            success:function(data){
-            console.log(data);
-            }
-            
-            }).then(function (data) {
-           $(".date-range").text(`${data.date_range}`);
-           $(".description").text(`${data.description}`);
-           $(".compatibility").text(`Compatibility: ${data.compatibility}`);
-           $(".mood").text(`Mood: ${data.mood}`);
-           $(".color").text(`Color: ${data.color}`);
-       })
-    }   
+         
 }
 
